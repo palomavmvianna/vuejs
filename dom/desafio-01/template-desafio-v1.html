@@ -1,0 +1,35 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="desafio">
+    <p>1. Usando VueJS - {{ nome }} ({{ idade }})</p>
+
+    <p>2. {{ idade * 3 }} {{ idadeVezes3() }}</p>
+
+    <p>3. {{ Math.random() }} {{ randomico() }} </p>
+
+    <p>4. <img v-bind:src="imagemGoogle" width="300px" height="auto"></img></p>
+
+    Forma 1: <p v-html="inputHtmlNome">5. </p>
+    Forma 2: <input type="text" v-bind:value="inputNome">
+</div>
+
+<script>
+    var app = new Vue({
+        el: "#desafio",
+        data: {
+            nome: "Paloma Menezes",
+            idade: 28,
+            imagemGoogle: 'https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_LeagueofLegends_RiotGames_S1_2560x1440-ee500721c06da3ec1e5535a88588c77f',
+            inputNome: 'Paloma Menezes',
+            inputHtmlNome: '<input type="text" value="Paloma Menezes">'
+        },
+        methods: {
+            idadeVezes3() {
+                return this.idade * 3
+            },
+            randomico() {
+                return Math.random()
+            }
+        }
+    });
+</script>

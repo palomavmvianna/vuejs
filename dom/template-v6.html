@@ -1,0 +1,28 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <h1 v-once> {{ titulo }} </h1>
+    <p>{{ saudacao() }}</p>
+    <a v-bind:href="link">Website It's In</a>
+
+    <hr>
+
+    <p v-html="linkHTML"></p>
+</div>
+
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            titulo: "Aula - VueJS",
+            link: 'http://itsin.com.br',
+            linkHTML: '<a href="https://google.com">Google</a>'
+        },
+        methods: {
+            saudacao: function() {
+                console.log(this)
+                return this.titulo
+            }
+        }
+    });
+</script>
