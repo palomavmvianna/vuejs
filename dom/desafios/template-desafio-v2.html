@@ -1,0 +1,35 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="desafio">
+   
+   <div>
+        1) <button v-on:click="exibirAlerta">Exibir Alerta</button>
+   </div>
+
+   <div>
+        2) <input type="text" v-on:keyup="valor = $event.target.value">
+        <p>{{ valor }}</p>
+    </div>
+
+    <div>
+        3) <input type="text" v-on:keydown.enter="alterarValor">
+        <p>{{ valor }}</p>
+    </div>
+</div>
+
+<script>
+    var app = new Vue({
+        el: "#desafio",
+        data: {
+            valor: ''
+        },
+        methods: {
+            exibirAlerta() {
+                alert('Merry Christmas! Funcionou!')
+            },
+            alterarValor(event) {
+                this.valor = event.target.value
+            }
+        }
+    });
+</script>
